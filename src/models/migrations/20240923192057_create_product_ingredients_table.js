@@ -3,7 +3,7 @@
  * @returns { Promise<void> }
  */
 exports.up = function(knex) {
-    return knex.schema.createTable('product_ingredients', (table) => {    
+    return knex.schema.createTable('product_ingredients', function(table){    
         table.integer('product_id').references('id').inTable('products').onDelete('CASCADE');
         table.integer('ingredient_id').references('id').inTable('ingredients').onDelete('CASCADE');
     });

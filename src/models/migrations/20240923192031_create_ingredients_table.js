@@ -3,7 +3,7 @@
  * @returns { Promise<void> }
  */
 exports.up = function(knex) {
-    return knex.schema.createTable('ingredients', (table) => {
+    return knex.schema.createTable('ingredients',function(table){
         table.increments('id').primary();
         table.string('name').notNullable();
         table.boolean('is_allergen').notNullable()
